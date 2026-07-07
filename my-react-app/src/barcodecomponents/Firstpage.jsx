@@ -384,7 +384,7 @@ Cartid!=null ? CartProducts?.map((x,index)=>{
 
     <section className="cart-items"> 
       
-      { <h1>Products:</h1>
+       <h1>Products:</h1>
 {//display all products
   Products?.map((x,index)=>{
     return(
@@ -393,7 +393,7 @@ Cartid!=null ? CartProducts?.map((x,index)=>{
       </div>
     )
   })
-} }
+} 
       {/* <div className="cart-item">
         <img src="https://via.placeholder.com/100" alt="Product"></img>
         <div className="item-details">
