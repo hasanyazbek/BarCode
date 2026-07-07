@@ -1,4 +1,4 @@
-import ProductBarcode from "./ProductBarcode.jsx";
+import ProductBarcode from "./ProductBarCode.jsx";
 import "./firstpage.css"
 function Product({name , price , id, barcode ,quantity, handleremoveproduct}) {
 //   const product = {
