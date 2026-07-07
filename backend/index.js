@@ -179,7 +179,7 @@ cartid:Int
 const app = express();
   const allowedorigin=["http://localhost:5173", // React app
     "http://localhost:3000",
-    "https://bar-code-theta.vercel.app"];
+    "https://bar-code-gamma.vercel.app"];
   // "https://bar-code-7fbepl9e5-teamlu.vercel.app"]; this is deployment you should put domain
 app.use(cors({
 origin :allowedorigin,
