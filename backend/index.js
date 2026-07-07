@@ -47,7 +47,7 @@ const DateTime = new GraphQLScalarType({
 // });
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DatabaseURL,
   ssl: {
     rejectUnauthorized: false
   }
