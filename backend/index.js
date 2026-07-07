@@ -38,12 +38,19 @@ const DateTime = new GraphQLScalarType({
 
 
 // PostgreSQL connection
+// const pool = new Pool({
+//   user: "postgres",
+//   host: "localhost",
+//   database: "BarCode",
+//   password: "password",
+//   port: 5432,
+// });
+
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "BarCode",
-  password: "password",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // GraphQL schema
@@ -171,7 +178,8 @@ cartid:Int
 
 const app = express();
   const allowedorigin=["http://localhost:5173", // React app
-    "http://localhost:3000"];
+    "http://localhost:3000",
+  "https://bar-code-7fbepl9e5-teamlu.vercel.app"];
 app.use(cors({
 origin :allowedorigin,
   credentials: true
@@ -381,6 +389,18 @@ app.use(
 
 
 
-server.listen(4000, () => {
-   console.log("🚀 Server running at http://localhost:4000/graphql");
+
+// server.listen(4000, () => {
+//    console.log("🚀 Server running at http://localhost:4000/graphql");
+// });
+
+const PORT = process.env.PORT || 4000;
+
+server.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
+
+
+// server.listen(4000, () => {
+//    console.log("🚀 Server running at http://localhost:4000/graphql");
+// });
