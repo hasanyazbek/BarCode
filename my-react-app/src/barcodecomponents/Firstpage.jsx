@@ -17,6 +17,7 @@ function Firstpage(){
 const [Products , setProducts] = useState([]);//all products 
 const [Cartid , setCartid] = useState(null) ; //current cart 
 const [CartProducts , setCartProducts] = useState([]);//current cart products 
+const [Error,setError] = useState([]);
 let Totalprice = 0;
       
      
