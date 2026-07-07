@@ -39,7 +39,7 @@ getcartproducts(cartid:${Cartid}){
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
@@ -79,7 +79,7 @@ getproducts{
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
@@ -115,7 +115,7 @@ createnewcart{
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
@@ -161,7 +161,7 @@ getproductbycode(code:"${code}"){
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
@@ -210,7 +210,7 @@ addtocart(cartid:${Cartid},prodid:${prodid},name:"${prodname}",price:${prodprice
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
@@ -244,7 +244,7 @@ removeprod(cartid:${Cartid},prodid:${id})
   
       try {
         
-        const res = await fetch('http://localhost:4000/graphql', {
+        const res = await fetch('https://barcode-osmb.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphqlQuery),
