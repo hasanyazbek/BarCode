@@ -1,0 +1,43 @@
+
+CREATE TABLE cart (
+    cartid SERIAL PRIMARY KEY
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(200),
+    price NUMERIC(10,2),
+    barcode VARCHAR(7)
+);
+
+CREATE TABLE cartproducts (
+    id SERIAL PRIMARY KEY,
+    cartid INT NOT NULL,
+    prodid INT NOT NULL,
+	prodname varchar(200),
+    quantity INT NOT NULL,
+    productprice NUMERIC(10,2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_cart
+        FOREIGN KEY (cartid) REFERENCES cart(cartid),
+
+    CONSTRAINT fk_product
+        FOREIGN KEY (prodid) REFERENCES products(id)
+);
+
+drop table cartproducts
+drop table cart 
+drop table products 
+
+
+INSERT INTO cart
+DEFAULT VALUES
+RETURNING cartid;
+
+
+INSERT INTO cartproducts
+(cartid, prodid, quantity, productprice)
+VALUES
+(15, 3, 2, 12.50);
+
